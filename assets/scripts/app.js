@@ -29,6 +29,16 @@ function createAndWriteOutput(mathOperator, initialResult, enteredNumber) {
 
 function calculateResult(calculationType) {
 	const enteredNumber = parseInt(getUserNumberInput());
+	if (
+		(calculationType !== "ADD" &&
+			calculationType !== "SUBTRACT" &&
+			calculationType !== "MULTIPLY" &&
+			calculationType !== "DIVIDE") ||
+		!enteredNumber
+	) {
+		return;
+	}
+
 	let initialResult = currentResult;
 	let mathOperator;
 	if (calculationType === "ADD") {
