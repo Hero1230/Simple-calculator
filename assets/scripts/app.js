@@ -40,7 +40,7 @@ function calculateResult(calculationType) {
 	} else if (calculationType === "MULTIPLY") {
 		currentResult *= enteredNumber;
 		mathOperator = "*";
-	} else if (calculationType === "DiVIDE") {
+	} else if (calculationType === "DIVIDE") {
 		currentResult /= enteredNumber;
 		mathOperator = "/";
 	}
@@ -67,3 +67,5 @@ function divide() {
 
 addBtn.addEventListener("click", add);
 subtractBtn.addEventListener("click", subtract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
