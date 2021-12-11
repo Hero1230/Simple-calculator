@@ -1,6 +1,11 @@
 let currentResult = 0;
 const logEntries = [];
 
+const ADD_OPERATION = "ADD";
+const SUBTRACT_OPERATION = "SUBTRACT";
+const DIVIDE_OPERATION = "DIVIDE";
+const MULTIPLY_OPERATION = "MULTIPLY";
+
 function getUserNumberInput() {
 	return usrInput.value;
 }
@@ -59,23 +64,16 @@ function calculateResult(calculationType) {
 	createAndWriteOutput(mathOperator, initialResult, enteredNumber);
 }
 
-function add() {
-	calculateResult("ADD");
-}
-
-function subtract() {
-	calculateResult("SUBTRACT");
-}
-
-function multiply() {
-	calculateResult("MULTIPLY");
-}
-
-function divide() {
-	calculateResult("DIVIDE");
-}
-
-addBtn.addEventListener("click", add);
-subtractBtn.addEventListener("click", subtract);
-multiplyBtn.addEventListener("click", multiply);
-divideBtn.addEventListener("click", divide);
+addBtn.addEventListener("click", calculateResult.bind(this, ADD_OPERATION));
+subtractBtn.addEventListener(
+	"click",
+	calculateResult.bind(this, SUBTRACT_OPERATION)
+);
+multiplyBtn.addEventListener(
+	"click",
+	calculateResult.bind(this, MULTIPLY_OPERATION)
+);
+divideBtn.addEventListener(
+	"click",
+	calculateResult.bind(this, DIVIDE_OPERATION)
+);
